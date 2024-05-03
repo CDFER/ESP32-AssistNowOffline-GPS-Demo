@@ -142,11 +142,11 @@ SatelliteAssistFileData analyzeAssistNowFile(FS* fs, const char* filePath, uint3
         messageNumber++;
     }
     time_t lastWriteTime = file.getLastWrite();
-    struct tm* timeinfo = localtime(&lastWriteTime);
+    struct tm* timeInfo = localtime(&lastWriteTime);
 
     Serial.printf("File:%s, %3.1fkiB, %04d/%02d/%02d %02d:%02d, ",
-                  filePath, (float)file.size() / 1024.0, timeinfo->tm_year + 1900, timeinfo->tm_mon + 1,
-                  timeinfo->tm_mday, timeinfo->tm_hour, timeinfo->tm_min);
+                  filePath, (float)file.size() / 1024.0, timeInfo->tm_year + 1900, timeInfo->tm_mon + 1,
+                  timeInfo->tm_mday, timeInfo->tm_hour, timeInfo->tm_min);
 
     Serial.printf("GPS:%s, BeiDou:%s, Glonass:%s, Galileo:%s, QZSS:%s, %04d/%02d/%02d->%04d/%02d/%02d",
                   data.gps ? "\x1B[32mYes\x1B[0m" : "No", data.beiDou ? "\x1B[32mYes\x1B[0m" : "No",
@@ -201,11 +201,11 @@ void downloadAssistNowOfflineFile(FS* fs, const char* downloadPath, AssistNowCon
     }
 
     //Print out time
-    struct tm timeinfo;
-    getLocalTime(&timeinfo);
+    struct tm timeInfo;
+    getLocalTime(&timeInfo);
     Serial.printf(
         "> \x1B[32mSynced to %d/%02d/%02d %02d:%02d local time in %0.2fs\x1B[0m\r\n",
-        timeinfo.tm_year + 1900, timeinfo.tm_mon + 1, timeinfo.tm_mday, timeinfo.tm_hour, timeinfo.tm_min, (float)(millis() - startTime) / 1000);
+        timeInfo.tm_year + 1900, timeInfo.tm_mon + 1, timeInfo.tm_mday, timeInfo.tm_hour, timeInfo.tm_min, (float)(millis() - startTime) / 1000);
 
 
     //limit buffer size to stack available

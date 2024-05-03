@@ -9,9 +9,22 @@
         "algorithm": "cpp"
     },
     "cSpell.words": [
+        "ashx",
+        "blox",
+        "BYTEBUF",
         "checkbytes",
+        "DEEPSLEEP",
         "glonass",
+        "gnss",
+        "mgaoffline",
+        "NZDT",
+        "NZST",
+        "PCAS",
+        "POWERON",
         "QZSS",
+        "Ringbuf",
+        "Ringbuffer",
+        "SDIO",
         "ublox"
     ]
 }
