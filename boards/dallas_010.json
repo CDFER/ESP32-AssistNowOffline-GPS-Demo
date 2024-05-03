@@ -1,0 +1,80 @@
+{
+    "build": {
+        "arduino": {
+            "ldscript": "esp32s2_out.ld"
+        },
+        "core": "esp32",
+        "extra_flags": [
+            "-DUSER_SETUP_LOADED=1",
+            "-DST7789_DRIVER=1",
+            "-DTFT_WIDTH=240",
+            "-DTFT_HEIGHT=280",
+            "-DTFT_MOSI=35",
+            "-DTFT_SCLK=36",
+            "-DTFT_CS=21",
+            "-DTFT_DC=14",
+            "-DTFT_RST=33",
+            "-DBACKLIGHT=13",
+            "-DVBAT_SENSE=1",
+            "-DVBAT_SENSE_SCALE=11",
+            "-DOUTPUT_EN=2",
+            "-DSPI_EN=38",
+            "-DSD_CARD_CS=34",
+            "-DWAKE_BUTTON=12",
+            "-DDOWN_BUTTON=10",
+            "-DUP_BUTTON=11",
+            "-DWIRE_SCL=9",
+            "-DWIRE_SDA=8",
+            "-DWIRE_RTC_INT=3",
+            "-DJST_UART_TX=17",
+            "-DJST_UART_RX=18",
+            "-DJST_IO_1_1=4",
+            "-DJST_IO_1_2=5",
+            "-DJST_IO_2_1=6",
+            "-DJST_IO_2_2=7",
+            "-DJST_IO_3_1=15",
+            "-DJST_IO_3_2=16"
+        ],
+        "f_cpu": "240000000L",
+        "f_flash": "80000000L",
+        "flash_mode": "qio",
+        "hwids": [
+            [
+                "0x239A",
+                "0x80EB"
+            ],
+            [
+                "0x239A",
+                "0x00EB"
+            ],
+            [
+                "0x239A",
+                "0x80EC"
+            ]
+        ],
+        "mcu": "esp32s2",
+        "variant": "esp32s2"
+    },
+    "connectivity": [
+        "wifi"  
+    ],
+    "debug": {
+        "openocd_target": "esp32s2.cfg"
+    },
+    "frameworks": [
+        "arduino",
+        "espidf"
+    ],
+    "name": "dallas_010",
+    "upload": {
+        "flash_size": "4MB",
+        "maximum_ram_size": 327680,
+        "maximum_size": 4194304,
+        "use_1200bps_touch": true,
+        "wait_for_upload_port": true,
+        "require_upload_port": true,
+        "speed": 3000000
+    },
+    "url": "",
+    "vendor": "Kea Studios"
+}
