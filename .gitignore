@@ -87,3 +87,4 @@ fp-info-cache
 
 *passwords.h
 *passwords.txt
+include/secrets.h
